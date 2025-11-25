@@ -1,0 +1,108 @@
+.admin-dashboard-page {
+  max-width: 80rem;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+  font-size: 1rem;
+  color: var(--gray-medium);
+  margin: 0;
+}
+
+.dashboard-stats {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 300ms;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-icon {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-title {
+  font-size: 0.875rem;
+  color: var(--gray-medium);
+  margin: 0 0 0.5rem;
+}
+
+.stat-count {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin: 0;
+}
+
+.dashboard-actions {
+  margin-bottom: 2rem;
+}
+
+.actions-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+.actions-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+.action-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem 1.5rem;
+  background-color: var(--gray-dark);
+  border: 1px solid rgba(220, 38, 38, 0.1);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--secondary);
+  transition: all 300ms;
+}
+
+.action-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.action-card span {
+  font-size: 0.875rem;
+  font-weight: 500;
+}

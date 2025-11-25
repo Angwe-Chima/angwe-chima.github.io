@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Hero from '../../components/home/hero/Hero';
 import FeaturedProjects from '../../components/home/featured-projects/FeaturedProjects';
 import SkillsOverview from '../../components/home/skills-overview/SkillsOverview';
+import RecentArticles from '../../components/home/Recent-articles/RecentArticles';
 import CallToAction from '../../components/home/call-to-action/CallToAction';
 import './Home.css';
 
@@ -17,6 +18,7 @@ const Home = () => {
       <Hero />
       <FeaturedProjects />
       <SkillsOverview />
+      <RecentArticles />
       <CallToAction />
     </motion.div>
   );

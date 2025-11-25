@@ -1,0 +1,241 @@
+/* --- Layout --- */
+.view-messages-page {
+  max-width: 80rem;
+  height: calc(100vh - 4rem);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+/* Header */
+.messages-header {
+  margin-bottom: 1.5rem;
+}
+
+.messages-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 0.25rem;
+}
+
+.messages-subtitle {
+  font-size: 1rem;
+  color: var(--gray-medium);
+}
+
+/* --- Two-column layout --- */
+.messages-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 28rem 1fr;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+/* --- Left: Message List --- */
+.messages-list {
+  background: var(--surface);
+  border-radius: 0.5rem;
+  overflow-y: auto;
+  border: 1px solid var(--gray-dark);
+}
+
+.message-item {
+  padding: 1rem;
+  border-bottom: 1px solid var(--gray-dark);
+  display: flex;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.message-item:hover {
+  background: var(--gray-light);
+}
+
+.message-item.active {
+  background: var(--secondary-light);
+}
+
+.message-item.unread {
+  background: var(--gray-lighter);
+  font-weight: 600;
+}
+
+/* Icon area */
+.message-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+}
+
+/* Preview text */
+.message-preview {
+  flex: 1;
+}
+
+.message-from {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.unread-badge {
+  background: var(--primary);
+  color: white;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.7rem;
+  border-radius: 0.5rem;
+}
+
+.message-subject {
+  font-size: 0.85rem;
+  color: var(--gray-medium);
+  margin-top: 0.15rem;
+}
+
+.message-date {
+  font-size: 0.75rem;
+  color: var(--gray-dark);
+  margin-top: 0.15rem;
+}
+
+/* Empty list */
+.empty-messages {
+  padding: 2rem;
+  text-align: center;
+  color: var(--gray-medium);
+}
+
+/* --- Right: Message Detail Panel --- */
+.message-detail {
+  background: var(--surface);
+  border-radius: 0.5rem;
+  border: 1px solid var(--gray-dark);
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Header inside detail view */
+.message-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.message-email {
+  color: var(--gray-medium);
+}
+
+.message-date-detail {
+  color: var(--gray-dark);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Subject box */
+.message-subject-box {
+  background: var(--gray-lighter);
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 0.95rem;
+}
+
+/* Body */
+.message-body p {
+  margin-top: 0.5rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+/* --- Actions --- */
+.message-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Reply button */
+.reply-btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+  text-decoration: none;
+}
+
+.reply-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* Delete button */
+.delete-btn-large {
+  background: var(--danger);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.2s ease;
+}
+
+.delete-btn-large:hover {
+  background: var(--danger-dark);
+}
+
+/* --- No message selected --- */
+.no-message-selected {
+  text-align: center;
+  color: var(--gray-medium);
+  margin-top: 5rem;
+}
+
+.no-message-selected svg {
+  color: var(--gray-dark);
+  margin-bottom: 1rem;
+}
+
+/* --- Scrollbars (nice) --- */
+.messages-list::-webkit-scrollbar,
+.message-detail::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages-list::-webkit-scrollbar-thumb,
+.message-detail::-webkit-scrollbar-thumb {
+  background: var(--gray-dark);
+  border-radius: 4px;
+}
+
+.messages-list::-webkit-scrollbar-track,
+.message-detail::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .messages-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .message-detail {
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,22 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--dominant);
+}
+
+.admin-main {
+  flex: 1;
+  margin-left: 16rem;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .admin-main {
+    margin-left: 0;
+  }
+}

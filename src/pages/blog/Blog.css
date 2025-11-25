@@ -19,8 +19,9 @@
     linear-gradient(rgba(255, 255, 255, 0.186) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.185) 1px, transparent 1px);
   background-size: 40px 40px;
-  z-index: 0;
+  z-index: 1;
   animation: gridPulse 4s ease-in-out infinite;
+  pointer-events: none;
 }
 
 @keyframes gridPulse {
@@ -32,10 +33,15 @@
   }
 }
 
+.blog-page > * {
+  position: relative;
+  z-index: 10;
+}
 
 .blog-header {
   text-align: center;
   margin-bottom: 3rem;
+  user-select: text;
 }
 
 .blog-title {
@@ -71,6 +77,8 @@
   justify-content: center;
   gap: 1.5rem;
   margin-top: 3rem;
+  position: relative;
+  z-index: 10;
 }
 
 .blog-pagination-info {
@@ -82,6 +90,8 @@
 .blog-empty {
   text-align: center;
   padding: 4rem 2rem;
+  position: relative;
+  z-index: 10;
 }
 
 .blog-empty-text {

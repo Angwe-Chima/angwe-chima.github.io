@@ -19,8 +19,9 @@
     linear-gradient(rgba(255, 255, 255, 0.186) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.185) 1px, transparent 1px);
   background-size: 40px 40px;
-  z-index: 0;
+  z-index: 1;
   animation: gridPulse 4s ease-in-out infinite;
+  pointer-events: none;
 }
 
 @keyframes gridPulse {
@@ -35,10 +36,15 @@
   }
 }
 
+.projects-page>* {
+  position: relative;
+  z-index: 10;
+}
 
 .projects-header {
   text-align: center;
   margin-bottom: 3rem;
+  user-select: text;
 }
 
 .projects-title {
@@ -67,6 +73,8 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 3rem;
+  position: relative;
+  z-index: 10;
 }
 
 .filter-button {
@@ -80,6 +88,8 @@
   font-size: 0.875rem;
   font-weight: 500;
   transition: all 300ms;
+  position: relative;
+  z-index: 10;
 }
 
 .filter-button:hover {
@@ -96,6 +106,8 @@
 .projects-empty {
   text-align: center;
   padding: 4rem 2rem;
+  position: relative;
+  z-index: 10;
 }
 
 .projects-empty-text {

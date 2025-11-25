@@ -21,8 +21,8 @@ const Contact = () => {
     {
       icon: FaPhone,
       label: 'Phone',
-      value: '+234 XXX XXX XXXX',
-      link: 'tel:+234XXXXXXXXXX',
+      value: '+234 915 846 8602',
+      link: 'tel:+2349158468602',
     },
   ];
 
@@ -93,7 +93,7 @@ const Contact = () => {
             <div className="contact-availability">
               <h3 className="contact-availability-title">Availability</h3>
               <p className="contact-availability-text">
-                I typically respond within 24-48 hours on business days.
+                I typically respond within 24 hours on business days.
                 <br />
                 For urgent matters, please mention it in your message.
               </p>
