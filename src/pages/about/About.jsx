@@ -6,8 +6,21 @@ import ServicesSection from '../../components/about/services-section/ServicesSec
 import GallerySection from '../../components/about/gallery-section/GallerySection';
 import AwardsSection from '../../components/about/awards-section/AwardsSection';
 import './About.css';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const About = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#gallery-section') {
+      const element = document.getElementById('gallery-section');
+      if (element) {
+        const offsetTop = element.offsetTop - 100; // adjust offset if needed
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      }
+    }
+  }, [location]);
   return (
     <motion.div
       className="about-page"
@@ -38,6 +51,8 @@ const About = () => {
 
         {/* Services Section */}
         <ServicesSection />
+        
+        <div id="gallery-section"></div>
 
         {/* Gallery Section */}
         <GallerySection />

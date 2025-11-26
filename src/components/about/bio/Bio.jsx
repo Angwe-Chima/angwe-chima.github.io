@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaDownload } from 'react-icons/fa';
 import Button from '../../common/button/Button';
+import ResumePreviewModal from '../../common/resume-preview-modal/ResumePreviewModal';
 import './Bio.css';
 
 const Bio = () => {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   return (
-    <section className="bio-section">
+    <section className="bio-section overflow-visible" >
       <div className="bio-content">
-        {/* Image */}
         <motion.div
           className="bio-image-wrapper"
           initial={{ opacity: 0, x: -50 }}
@@ -22,12 +24,10 @@ const Bio = () => {
               alt="Chima Angwe"
               className="bio-image"
             />
-            {/* Decorative border */}
-            <div className="bio-image-border"></div>
+            <div className="bio-image-border" />
           </div>
         </motion.div>
 
-        {/* Text Content */}
         <motion.div
           className="bio-text"
           initial={{ opacity: 0, x: 50 }}
@@ -36,48 +36,35 @@ const Bio = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="bio-title">About Me</h2>
-          
+
           <div className="bio-paragraphs">
             <p>
-              Hi! I'm <span className="text-gradient">Chima Angwe</span>, 
-              a passionate Full Stack Developer based in Lagos, Nigeria. 
-              I specialize in building exceptional digital experiences using the MERN stack 
-              (MongoDB, Express.js, React, and Node.js).
+              Hi! I'm <span className="text-gradient">Chima Angwe</span>, a
+              passionate Full Stack Developer based in Lagos, Nigeria.
             </p>
 
-            <p>
-              With a keen eye for design and a deep understanding of modern web technologies, 
-              I create applications that are not only functional but also beautiful and user-friendly. 
-              My journey in web development began with a curiosity about how things work on the internet, 
-              and it has evolved into a career I'm truly passionate about.
-            </p>
+            <p>I build digital experiences using the MERN stack.</p>
 
             <p>
-              When I'm not coding, you'll find me exploring new technologies, contributing to open-source 
-              projects, or sharing my knowledge through blog posts and tutorials. I believe in continuous 
-              learning and staying up-to-date with the latest industry trends.
+              I enjoy learning new technologies and contributing to open source.
             </p>
 
-            <p>
-              I'm currently open to freelance opportunities and full-time positions where I can contribute 
-              my skills and continue to grow as a developer. Let's build something amazing together!
-            </p>
+            <p>I'm open to freelance and full-time opportunities.</p>
           </div>
 
-          {/* Resume Download */}
-          <a
-            href="/resume.pdf"
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button variant="primary">
+          <div className="mt-6 flex justify-start">
+            <Button variant="primary" onClick={() => setIsResumeOpen(true)}>
               <FaDownload size={16} className="mr-2" />
-              Download Resume
+              View Resume
             </Button>
-          </a>
+          </div>
         </motion.div>
       </div>
+
+      <ResumePreviewModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+      />
     </section>
   );
 };

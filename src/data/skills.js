@@ -6,7 +6,7 @@ export const skills = [
     name: 'React',
     category: 'Frontend',
     icon: 'FaReact',
-    color: '#61DAFB', // Official brand color (optional)
+    color: '#61DAFB',
   },
   {
     id: 2,
@@ -29,31 +29,24 @@ export const skills = [
     icon: 'FaHtml5',
     color: '#E34F26',
   },
-  {
-    id: 5,
-    name: 'TypeScript',
-    category: 'Frontend',
-    icon: 'SiTypescript',
-    color: '#3178C6',
-  },
 
   // Backend
   {
-    id: 6,
+    id: 5,
     name: 'Node.js',
     category: 'Backend',
     icon: 'FaNodeJs',
     color: '#339933',
   },
   {
-    id: 7,
+    id: 6,
     name: 'Express.js',
     category: 'Backend',
-    icon: 'SiExpress',
-    color: '#000000',
+    icon: 'SiExpress', // Using a generic server icon
+    color: '#FFF',
   },
   {
-    id: 8,
+    id: 7,
     name: 'REST APIs',
     category: 'Backend',
     icon: 'FaServer',
@@ -62,14 +55,14 @@ export const skills = [
 
   // Database
   {
-    id: 9,
+    id: 8,
     name: 'MongoDB',
     category: 'Database',
     icon: 'SiMongodb',
     color: '#47A248',
   },
   {
-    id: 10,
+    id: 9,
     name: 'MySQL',
     category: 'Database',
     icon: 'SiMysql',
@@ -77,10 +70,10 @@ export const skills = [
   },
   {
     id: 11,
-    name: 'PostgreSQL',
+    name: 'Microsoft SQL Server',
     category: 'Database',
-    icon: 'SiPostgresql',
-    color: '#4169E1',
+    icon: 'DiMsqlServer',
+    color: '#CC2927',
   },
 
   // Tools & Others
@@ -96,13 +89,13 @@ export const skills = [
     name: 'GitHub',
     category: 'Tools',
     icon: 'FaGithub',
-    color: '#181717',
+    color: '#FFF',
   },
   {
     id: 14,
     name: 'VS Code',
     category: 'Tools',
-    icon: 'SiVisualstudiocode',
+    icon: 'VscVscode',
     color: '#007ACC',
   },
   {
@@ -119,12 +112,28 @@ export const skills = [
     icon: 'FaFigma',
     color: '#F24E1E',
   },
+
+  // Additional Skills
   {
     id: 17,
-    name: 'Docker',
-    category: 'Tools',
-    icon: 'FaDocker',
-    color: '#2496ED',
+    name: 'Java',
+    category: 'Backend',
+    icon: 'FaJava',
+    color: '#FFF',
+  },
+  {
+    id: 18,
+    name: 'Firebase',
+    category: 'Backend',
+    icon: 'SiFirebase',
+    color: '#FFCA28',
+  },
+  {
+    id: 19,
+    name: 'Python',
+    category: 'Backend',
+    icon: 'FaPython',
+    color: '#3776AB',
   },
 ];
 

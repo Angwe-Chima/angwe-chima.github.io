@@ -2,8 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import * as FaIcons from 'react-icons/fa';
 import * as SiIcons from 'react-icons/si';
+import * as vscIcons from "react-icons/vsc";
+import * as diIcons from "react-icons/di";
+
+
 import { skills } from '../../../data/skills';
 import { containerVariants, fadeInUp } from '../../../utils/animations';
+
 import './SkillsOverview.css';
 
 const SkillsOverview = () => {
@@ -32,7 +37,7 @@ const SkillsOverview = () => {
           viewport={{ once: true }}
         >
           {skills.map((skill) => {
-            const Icon = FaIcons[skill.icon] || SiIcons[skill.icon];
+            const Icon = FaIcons[skill.icon] || SiIcons[skill.icon] || vscIcons[skill.icon] || diIcons[skill.icon];
 
             return (
               <motion.div
