@@ -2,14 +2,15 @@
   "name": "portfolio-frontend",
   "homepage": "https://Angwe-Chima.github.io/Angwe-Chima-Site",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "postbuild": "copy dist/index.html dist/404.html",
+    "predeploy": "npm run build && npm run postbuild",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
