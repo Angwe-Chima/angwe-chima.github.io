@@ -1,15 +1,19 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaDownload, FaTimes } from "react-icons/fa";
-import Button from "../button/Button";
+// ResumePreviewModal.jsx
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaDownload, FaTimes } from 'react-icons/fa';
+import Button from '../button/Button';
 
 const ResumePreviewModal = ({ isOpen, onClose }) => {
   const [loading, setLoading] = useState(true);
 
+  // Use PUBLIC_URL to ensure compatibility with GitHub Pages
+  const pdfPath = 'https://angwe-chima.github.io/Angwe-Chima-Site/resume.pdf';
+
   const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/resume.pdf";
-    link.download = "resume.pdf";
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = 'resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -66,7 +70,7 @@ const ResumePreviewModal = ({ isOpen, onClose }) => {
                 )}
 
                 <iframe
-                  src={`/resume.pdf?nocache=${Date.now()}`}
+                  src={`${pdfPath}?nocache=${Date.now()}`}
                   className="w-full h-full"
                   title="Resume Preview"
                   onLoad={() => setLoading(false)}
@@ -75,11 +79,19 @@ const ResumePreviewModal = ({ isOpen, onClose }) => {
 
               {/* Action buttons */}
               <div className="flex gap-3">
-                <Button variant="secondary" onClick={onClose} className="flex-1">
+                <Button
+                  variant="secondary"
+                  onClick={onClose}
+                  className="flex-1"
+                >
                   Close
                 </Button>
 
-                <Button variant="primary" onClick={handleDownload} className="flex-2">
+                <Button
+                  variant="primary"
+                  onClick={handleDownload}
+                  className="flex-2"
+                >
                   <FaDownload size={16} className="mr-2" />
                   Download
                 </Button>
