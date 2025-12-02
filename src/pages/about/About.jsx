@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
-import Bio from '../../components/about/bio/Bio';
-import SkillsSection from '../../components/about/skills-section/SkillsSection';
-import ServicesSection from '../../components/about/services-section/ServicesSection';
-import GallerySection from '../../components/about/gallery-section/GallerySection';
-import AwardsSection from '../../components/about/awards-section/AwardsSection';
-import './About.css';
 import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import {useEffect} from 'react';
+import Bio from '../../components/about/bio/Bio';
+import './About.css';
+
+// Lazy load heavy sections
+const SkillsSection = lazy(() => import('../../components/about/skills-section/SkillsSection'));
+const ServicesSection = lazy(() => import('../../components/about/services-section/ServicesSection'));
+const GallerySection = lazy(() => import('../../components/about/gallery-section/GallerySection'));
+const AwardsSection = lazy(() => import('../../components/about/awards-section/AwardsSection'));
+
+const SectionLoader = () => (
+  <div style={{ height: '300px', background: '#f0f0f0', animation: 'pulse 2s infinite' }} />
+);
 
 const About = () => {
   const location = useLocation();
@@ -16,11 +22,12 @@ const About = () => {
     if (location.hash === '#gallery-section') {
       const element = document.getElementById('gallery-section');
       if (element) {
-        const offsetTop = element.offsetTop - 100; // adjust offset if needed
+        const offsetTop = element.offsetTop - 100;
         window.scrollTo({ top: offsetTop, behavior: 'smooth' });
       }
     }
   }, [location]);
+
   return (
     <motion.div
       className="about-page"
@@ -29,7 +36,7 @@ const About = () => {
       exit={{ opacity: 0 }}
     >
       <div className="container-custom section-padding">
-        {/* Page Header */}
+        {/* Page Header - loads immediately */}
         <motion.div
           className="about-header"
           initial={{ opacity: 0, y: 20 }}
@@ -43,22 +50,30 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* Bio Section */}
+        {/* Bio - loads immediately (lightweight) */}
         <Bio />
 
-        {/* Skills Section */}
-        <SkillsSection />
+        {/* Skills - lazy loaded */}
+        <Suspense fallback={<SectionLoader />}>
+          <SkillsSection />
+        </Suspense>
 
-        {/* Services Section */}
-        <ServicesSection />
-        
+        {/* Services - lazy loaded */}
+        <Suspense fallback={<SectionLoader />}>
+          <ServicesSection />
+        </Suspense>
+
         <div id="gallery-section"></div>
 
-        {/* Gallery Section */}
-        <GallerySection />
+        {/* Gallery - lazy loaded (usually heavy with images) */}
+        <Suspense fallback={<SectionLoader />}>
+          <GallerySection />
+        </Suspense>
 
-        {/* Awards Section */}
-        <AwardsSection />
+        {/* Awards - lazy loaded */}
+        <Suspense fallback={<SectionLoader />}>
+          <AwardsSection />
+        </Suspense>
       </div>
     </motion.div>
   );
