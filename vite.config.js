@@ -7,7 +7,7 @@ export default defineConfig(({ command }) => ({
   publicDir: 'public',
 
   // Use "/" for local dev, repo name for production
-  base: command === 'serve' ? '/' : '/Angwe-Chima-Site/',
+  base: "/",
 
   server: {
     port: 5173,
