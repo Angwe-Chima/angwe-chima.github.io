@@ -135,6 +135,20 @@ export const skills = [
     icon: 'FaPython',
     color: '#3776AB',
   },
+  {
+    id: 12,
+    name: 'Flutter',
+    category: 'Mobile Framework',
+    icon: 'SiFlutter',
+    color: '#02569B',
+  },
+  {
+    id: 13,
+    name: 'Dart',
+    category: 'Programming Language',
+    icon: 'SiDart',
+    color: '#0175C2',
+  },
 ];
 
 // Skill categories
