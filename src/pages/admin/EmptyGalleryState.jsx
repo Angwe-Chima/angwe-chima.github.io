@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPlus, FaImages } from 'react-icons/fa';
-import Button from '../../../components/common/button/Button';
+import Button from '../../components/common/button/Button';
 
 const EmptyGalleryState = ({ onCreate }) => {
   return (

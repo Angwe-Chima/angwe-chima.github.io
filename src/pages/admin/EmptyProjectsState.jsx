@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPlus } from 'react-icons/fa';
-import Button from '../../../components/common/button/Button';
+import Button from '../../components/common/button/Button';
 
 const EmptyProjectsState = ({ onCreate }) => {
   return (
