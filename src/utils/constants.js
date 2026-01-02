@@ -22,7 +22,7 @@ export const BLOG_CATEGORIES = [
 // Social media links
 export const SOCIAL_LINKS = {
   github: 'https://github.com/chima-angwe',
-  linkedin: 'https://linkedin.com/in/chima-angwe-679560274',
+  linkedin: 'https://www.linkedin.com/in/chima-angwe-679560274/',
   X: 'https://X.com/chimaangwe',
   email: 'angwechima@gmail.com',
 };
